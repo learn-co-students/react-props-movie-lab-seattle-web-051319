@@ -5,7 +5,16 @@ import movieData from './data.js'
 export default class MovieShowcase extends Component {
 
   generateMovieCards = () => {
-    // map over your movieData array and return the correct 
+    // map over your movieData array and return the correct
+    return movieData.map(movie => {
+        let {title, IMDBRating, genres, poster} = movie
+
+        return (
+            <div>
+                <MovieCard title={title} IMDBRating={IMDBRating} genres={genres} poster={poster} />
+            </div>
+        )
+    })
   }
 
   render() {
